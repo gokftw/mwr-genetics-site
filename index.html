@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MWR Genetics - Inovação e Produtividade em Cana-de-Açúcar</title>
+
+    <meta property="og:title" content="MWR Genetics: Genética de Alto Rendimento para Cana-de-Açúcar" />
+    <meta property="og:description"
+        content="Especialistas em melhoramento genético focado em variedades de alto TAH e resistência para maximizar a eficiência do seu canavial." />
+    <meta property="og:type" content="website" />
+
+    <meta property="og:image" content="https://SUA_URL_PUBLICA/WhatsApp Image 2025-11-15 at 06.21.26.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta property="og:url" content="https://SUA_URL_PUBLICA/index.html" />
+    <style>
+        /* ============================= */
+        /* VARIÁVEIS E CONFIGURAÇÕES BASE */
+        /* ============================= */
+        :root {
+            --primary-color: #38761D;
+            /* Verde Cana Escuro (MWR) */
+            --secondary-color: #C36A2D;
+            /* Laranja/Terra (MWR) */
+            --text-dark: #333;
+            --text-light: #fff;
+            --bg-light: #f9f9f9;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* ============================= */
+        /* 1. CABEÇALHO (HEADER) */
+        /* ============================= */
+        header {
+            background-color: var(--primary-color);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            color: var(--text-light);
+            margin: 0;
+            font-size: 1.8em;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: var(--text-light);
+            margin-left: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #d4e8c8;
+            /* Verde mais claro no hover */
+        }
+
+        /* ============================= */
+        /* 2. SEÇÃO PRINCIPAL (HERO) */
+        /* ============================= */
+        .hero {
+            /* Imagem: WhatsApp Image 2025-11-15 at 06.21.26.jpg */
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('WhatsApp Image 2025-11-15 at 06.21.26.jpg') no-repeat center center/cover;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--text-light);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h2 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            max-width: 700px;
+        }
+
+        .hero .cta {
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero .cta:hover {
+            background-color: #A0522D;
+            transform: translateY(-2px);
+        }
+
+        /* ============================= */
+        /* 3. SEÇÕES DE CONTEÚDO GERAL */
+        /* ============================= */
+        section {
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        section h3 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 40px;
+        }
+
+        .bg-light {
+            background-color: var(--bg-light);
+        }
+
+        /* Estilo para imagens avulsas nas seções */
+        .section-image-standalone {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 30px auto;
+            display: block;
+            cursor: pointer;
+            /* Adicionado para indicar que é clicável */
+        }
+
+        /* Vantagem Genética (Vídeo) */
+        .vantagem-genetica video {
+            width: 80%;
+            max-width: 900px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        /* Solo e Citação */
+        blockquote {
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 25px;
+            margin: 40px auto;
+            max-width: 650px;
+            font-style: italic;
+            font-size: 1.1em;
+            color: #555;
+            text-align: left;
+        }
+
+        /* ============================= */
+        /* 6. GALERIA (GRID) - PADRONIZAÇÃO E CENTRALIZAÇÃO */
+        /* ============================= */
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+
+            /* CENTRALIZAÇÃO DA GALERIA */
+            max-width: 1000px;
+            /* Limita a largura do container da grade */
+            margin-left: auto;
+            /* Centraliza a grade */
+            margin-right: auto;
+            /* Centraliza a grade */
+            padding: 0 20px;
+            /* Adiciona um pequeno padding interno */
+        }
+
+        .galeria-item {
+            background-color: var(--text-light);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+        }
+
+        .galeria-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            /* Padroniza o tamanho das imagens */
+            border-radius: 8px;
+            display: block;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .galeria-item img:hover {
+            transform: scale(1.02);
+            /* Pequeno efeito visual no hover */
+        }
+
+        .galeria-item p {
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-top: 15px;
+            font-size: 1em;
+        }
+
+        /* ============================= */
+        /* 7. RODAPÉ (FOOTER) - CENTRALIZAÇÃO DO CONTEÚDO */
+        /* ============================= */
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+            padding: 40px 5%;
+            text-align: center;
+            /* Garante o alinhamento de texto */
+
+            /* Centralização Garantida */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        footer p {
+            margin: 5px 0;
+            font-size: 0.9em;
+            text-align: center;
+            /* Garante que os parágrafos individuais fiquem centralizados */
+        }
+
+        footer a {
+            color: #f0f0f0;
+            text-decoration: none;
+        }
+
+        /* ============================= */
+        /* 8. MODAL (LIGHTBOX) STYLES */
+        /* ============================= */
+        .modal {
+            display: none;
+            /* Escondido por padrão */
+            position: fixed;
+            /* Fica no topo da página */
+            z-index: 1000;
+            /* Fica acima de tudo */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            /* Permite scroll se necessário */
+            background-color: rgba(0, 0, 0, 0.9);
+            /* Fundo preto semi-transparente */
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            margin: auto;
+            /* Centraliza horizontalmente */
+            display: block;
+            width: 90%;
+            max-width: 1000px;
+            max-height: 90vh;
+            /* Limita altura para caber na tela */
+            object-fit: contain;
+            /* Garante que a imagem caiba */
+        }
+
+        .caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+        }
+
+        /* Botão de Fechar */
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            opacity: 0.7;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #fff;
+            text-decoration: none;
+            opacity: 1;
+        }
+
+        /* Animação */
+        .modal-content,
+        .caption {
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @keyframes zoom {
+            from {
+                transform: scale(0.1)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>MWR Genetics</h1>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#genetica">Nossa Genética</a>
+            <a href="#solo">Solo & Ambiente</a>
+            <a href="#galeria">Galeria</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+        <h2>Sua Parceira para o Máximo Rendimento Industrial.</h2>
+        <p>A MWR Genetics é especialista em melhoramento genético, focada em variedades que elevam os indicadores
+            "TCH" e "TAH" do seu canavial. Conte com "Alta Produtividade, Alta Tecnologia" e "Resistência".</p>
+        <a href="#genetica" class="cta">Transforme Seu Canavial</a>
+    </section>
+
+    <section class="vantagem-genetica" id="genetica">
+        <h3>🌱 O Poder da Genética para Alta Qualidade Industrial.</h3>
+        <p>Nossos programas de P&D utilizam técnicas de cruzamento e melhoramento convencional para desenvolver
+            linhagens de cana-de-açúcar com maior teor de sacarose e resistência a pragas. Buscamos a "inovação
+            constante".</p>
+
+        <video width="80%" controls muted autoplay loop>
+            <source src="WhatsApp Video 2025-11-15 at 06.30.38.mp4" type="video/mp4">
+            Seu navegador não suporta a tag de vídeo.
+        </video>
+
+        <img src="WhatsApp Image 2025-11-15 at 06.30.38.jpeg" alt="Detalhe de Alta Produtividade"
+            class="section-image-standalone" onclick="openModal(this.src, this.alt)">
+        <p>Aplicamos "Alta Tecnologia" no desenvolvimento e no sistema de plantio, garantindo variedades que entregam
+            não apenas TCH, mas principalmente "TAH".</p>
+
+    </section>
+
+    <section class="bg-light" id="solo">
+        <h3>🌍 Enraizados na Resiliência e no Ambiente.</h3>
+        <p>Entendemos que a genética deve trabalhar em harmonia com o solo e o clima. Nossas variedades são
+            exaustivamente testadas para garantir o melhor desempenho e "Resistência" em diferentes ambientes de
+            produção.</p>
+
+        <blockquote
+            style="border-left: 5px solid var(--secondary-color); padding-left: 25px; margin: 40px auto; max-width: 650px; font-style: italic;">
+            "Variedades de alto rendimento demandam excelência. Conte com a MWR Genetics para ter as ferramentas
+            genéticas necessárias para vencer os desafios climáticos e maximizar sua eficiência produtiva."
+        </blockquote>
+
+        <img src="WhatsApp Image 2025-11-15 at 06.30.38 (1).jpeg" alt="Pesquisa e Análise de Solo"
+            class="section-image-standalone" onclick="openModal(this.src, this.alt)">
+
+        <p style="margin-top: 40px; font-size: 0.9em; color: #777;">"Imagens de solo fértil e condições climáticas
+            extremas são parte fundamental dos nossos testes de resiliência."</p>
+    </section>
+
+    <section id="galeria">
+        <h3>🔬 Nossas Variedades em Campo</h3>
+        <p>Abaixo, veja o vigor e o potencial das nossas variedades em diferentes fases de crescimento e ambiente.</p>
+        <div class="galeria-grid">
+
+            <div class="galeria-item">
+                <img src="WhatsApp Image 2025-11-15 at 06.27.04.jpeg" alt="1. Estágio Inicial: Plantio e Vigor."
+                    onclick="openModal(this.src, this.alt)">
+                <p>1. Estágio Inicial: Plantio e Vigor.</p>
+            </div>
+
+            <div class="galeria-item">
+                <img src="WhatsApp Image 2025-11-15 at 06.20.37.jpeg" alt="2. Desenvolvimento: Alto Potencial TCH."
+                    onclick="openModal(this.src, this.alt)">
+                <p>2. Desenvolvimento: Alto Potencial TCH.</p>
+            </div>
+
+            <div class="galeria-item">
+                <img src="WhatsApp Image 2025-11-15 at 06.18.05.jpeg"
+                    alt="3. Maturidade: Colheita de Alta Produtividade." onclick="openModal(this.src, this.alt)">
+                <p>3. Maturidade: Colheita de Alta Produtividade.</p>
+            </div>
+
+            <div class="galeria-item">
+                <img src="WhatsApp Image 2025-11-15 at 06.25.04.jpeg" alt="4. Foco Industrial: Qualidade do Colmo."
+                    onclick="openModal(this.src, this.alt)">
+                <p>4. Foco Industrial: Qualidade do Colmo.</p>
+            </div>
+
+            <div class="galeria-item">
+                <img src="WhatsApp Image 2025-11-15 at 07.28.31.jpeg" alt="5. Cana-de-açúcar de Alto Rendimento."
+                    onclick="openModal(this.src, this.alt)">
+                <p>5. Cana-de-açúcar de Alto Rendimento.</p>
+            </div>
+
+            <div class="galeria-item">
+                <img src="WhatsApp Image 2025-11-15 at 07.28.32.jpeg" alt="6. Colheita e Preparo da Cana."
+                    onclick="openModal(this.src, this.alt)">
+                <p>6. Colheita e Preparo da Cana.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato">
+        <p>Fale Conosco: contato@mwrgenetics.com | (XX) XXXXX-XXXX</p>
+        <p>Endereço: Fazenda Genética, Zona Rural, Brasil</p>
+        <p>© 2025 MWR Genetics. Todos os direitos reservados.</p>
+    </footer>
+
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <img class="modal-content" id="modalImage">
+
+        <div id="caption" class="caption"></div>
+    </div>
+
+    <script>
+        // Obtém o elemento modal
+        var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("modalImage");
+        var captionText = document.getElementById("caption");
+
+        // Função para abrir o modal
+        function openModal(src, alt) {
+            modal.style.display = "block";
+            modalImg.src = src; // Define o caminho da imagem grande
+            captionText.innerHTML = alt; // Define a legenda
+        }
+
+        // Função para fechar o modal
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        // Fecha o modal se o usuário clicar fora da imagem
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+
+</body>
+
+</html>
