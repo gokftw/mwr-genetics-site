@@ -10,11 +10,9 @@
     <meta property="og:description"
         content="Especialistas em melhoramento genético focado em variedades de alto TAH e resistência para maximizar a eficiência do seu canavial." />
     <meta property="og:type" content="website" />
-
     <meta property="og:image" content="https://SUA_URL_PUBLICA/WhatsApp Image 2025-11-15 at 06.21.26.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-
     <meta property="og:url" content="https://SUA_URL_PUBLICA/index.html" />
     <style>
         /* ============================= */
@@ -38,7 +36,7 @@
         }
 
         /* ============================= */
-        /* 1. CABEÇALHO (HEADER) */
+        /* 1. CABEÇALHO (HEADER) - AJUSTADO PARA O HAMBURGUER */
         /* ============================= */
         header {
             background-color: var(--primary-color);
@@ -47,6 +45,7 @@
             justify-content: space-between;
             align-items: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
 
         header h1 {
@@ -56,7 +55,13 @@
             letter-spacing: 1px;
         }
 
-        nav a {
+        /* O botão de toggle é escondido por padrão (desktop) */
+        .menu-toggle {
+            display: none;
+        }
+
+        /* Estilo de navegação para DESKTOP */
+        .nav-menu a {
             color: var(--text-light);
             margin-left: 25px;
             text-decoration: none;
@@ -64,17 +69,16 @@
             transition: color 0.3s;
         }
 
-        nav a:hover {
+        .nav-menu a:hover {
             color: #d4e8c8;
-            /* Verde mais claro no hover */
         }
 
         /* ============================= */
-        /* 2. SEÇÃO PRINCIPAL (HERO) */
+        /* 2. SEÇÃO PRINCIPAL (HERO) - IMAGEM DE FUNDO CORRIGIDA AQUI! */
         /* ============================= */
         .hero {
-            /* Imagem: WhatsApp Image 2025-11-15 at 06.21.26.jpg */
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('WhatsApp Image 2025-11-15 at 06.21.26.jpg') no-repeat center center/cover;
+            /* CORRIGIDO: Nome do arquivo agora corresponde ao que você enviou */
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('WhatsApp Image 2025-11-17 at 10.12.06.jpeg') no-repeat center center/cover;
             height: 70vh;
             display: flex;
             flex-direction: column;
@@ -89,12 +93,14 @@
             font-size: 3.5em;
             margin-bottom: 15px;
             font-weight: 700;
+            padding: 0 15px;
         }
 
         .hero p {
             font-size: 1.3em;
             margin-bottom: 40px;
             max-width: 700px;
+            padding: 0 15px;
         }
 
         .hero .cta {
@@ -142,12 +148,11 @@
             margin: 30px auto;
             display: block;
             cursor: pointer;
-            /* Adicionado para indicar que é clicável */
         }
 
         /* Vantagem Genética (Vídeo) */
         .vantagem-genetica video {
-            width: 80%;
+            width: 100%;
             max-width: 900px;
             height: auto;
             border-radius: 10px;
@@ -168,23 +173,17 @@
         }
 
         /* ============================= */
-        /* 6. GALERIA (GRID) - PADRONIZAÇÃO E CENTRALIZAÇÃO */
+        /* 6. GALERIA (GRID) */
         /* ============================= */
         .galeria-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 50px;
-
-            /* CENTRALIZAÇÃO DA GALERIA */
             max-width: 1000px;
-            /* Limita a largura do container da grade */
             margin-left: auto;
-            /* Centraliza a grade */
             margin-right: auto;
-            /* Centraliza a grade */
             padding: 0 20px;
-            /* Adiciona um pequeno padding interno */
         }
 
         .galeria-item {
@@ -199,7 +198,6 @@
             width: 100%;
             height: 200px;
             object-fit: cover;
-            /* Padroniza o tamanho das imagens */
             border-radius: 8px;
             display: block;
             transition: transform 0.3s;
@@ -208,7 +206,6 @@
 
         .galeria-item img:hover {
             transform: scale(1.02);
-            /* Pequeno efeito visual no hover */
         }
 
         .galeria-item p {
@@ -219,16 +216,13 @@
         }
 
         /* ============================= */
-        /* 7. RODAPÉ (FOOTER) - CENTRALIZAÇÃO DO CONTEÚDO */
+        /* 7. RODAPÉ (FOOTER) */
         /* ============================= */
         footer {
             background-color: var(--secondary-color);
             color: var(--text-light);
             padding: 40px 5%;
             text-align: center;
-            /* Garante o alinhamento de texto */
-
-            /* Centralização Garantida */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -239,7 +233,6 @@
             margin: 5px 0;
             font-size: 0.9em;
             text-align: center;
-            /* Garante que os parágrafos individuais fiquem centralizados */
         }
 
         footer a {
@@ -252,32 +245,24 @@
         /* ============================= */
         .modal {
             display: none;
-            /* Escondido por padrão */
             position: fixed;
-            /* Fica no topo da página */
             z-index: 1000;
-            /* Fica acima de tudo */
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
             overflow: auto;
-            /* Permite scroll se necessário */
             background-color: rgba(0, 0, 0, 0.9);
-            /* Fundo preto semi-transparente */
             padding-top: 60px;
         }
 
         .modal-content {
             margin: auto;
-            /* Centraliza horizontalmente */
             display: block;
             width: 90%;
             max-width: 1000px;
             max-height: 90vh;
-            /* Limita altura para caber na tela */
             object-fit: contain;
-            /* Garante que a imagem caiba */
         }
 
         .caption {
@@ -291,7 +276,6 @@
             height: 150px;
         }
 
-        /* Botão de Fechar */
         .close {
             position: absolute;
             top: 15px;
@@ -311,7 +295,6 @@
             opacity: 1;
         }
 
-        /* Animação */
         .modal-content,
         .caption {
             animation-name: zoom;
@@ -327,6 +310,90 @@
                 transform: scale(1)
             }
         }
+
+        /* ====================================================================== */
+        /* 9. MEDIA QUERIES (Responsividade) - Estilos Específicos para Mobile */
+        /* ====================================================================== */
+        @media (max-width: 768px) {
+
+            /* CABEÇALHO */
+            header {
+                padding: 10px 20px;
+            }
+
+            /* TORNA O BOTÃO HAMBURGUER VISÍVEL */
+            .menu-toggle {
+                display: block;
+                background: none;
+                border: none;
+                color: var(--text-light);
+                font-size: 1.8em;
+                cursor: pointer;
+                z-index: 10;
+            }
+
+            /* ESTILO INICIAL DO MENU HAMBURGUER (ESCONDIDO) */
+            .nav-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                background-color: #2c6317;
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+                height: 0;
+                overflow: hidden;
+                transition: height 0.4s ease-in-out;
+            }
+
+            /* ESTILO PARA O MENU ABERTO (Adicionado pelo JS) */
+            .nav-menu.open {
+                height: 250px;
+                /* Altura fixa para transição suave */
+            }
+
+            .nav-menu a {
+                padding: 15px 20px;
+                margin: 0;
+                text-align: left;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            /* Hero Section */
+            .hero {
+                height: 60vh;
+            }
+
+            .hero h2 {
+                font-size: 2.2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .hero .cta {
+                padding: 12px 30px;
+            }
+
+            /* Seções Gerais */
+            section {
+                padding: 50px 5%;
+            }
+
+            section h3 {
+                font-size: 2em;
+                margin-bottom: 25px;
+            }
+
+            /* Galeria */
+            .galeria-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 0;
+            }
+        }
     </style>
 </head>
 
@@ -334,7 +401,10 @@
 
     <header>
         <h1>MWR Genetics</h1>
-        <nav>
+        <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">
+            ☰
+        </button>
+        <nav class="nav-menu" id="main-nav">
             <a href="#inicio">Início</a>
             <a href="#genetica">Nossa Genética</a>
             <a href="#solo">Solo & Ambiente</a>
@@ -438,36 +508,58 @@
 
     <div id="myModal" class="modal">
         <span class="close" onclick="closeModal()">&times;</span>
-
         <img class="modal-content" id="modalImage">
-
         <div id="caption" class="caption"></div>
     </div>
-
     <script>
-        // Obtém o elemento modal
+        // ===================================
+        // LÓGICA DO MODAL (LIGHTBOX)
+        // ===================================
         var modal = document.getElementById("myModal");
         var modalImg = document.getElementById("modalImage");
         var captionText = document.getElementById("caption");
 
-        // Função para abrir o modal
         function openModal(src, alt) {
             modal.style.display = "block";
-            modalImg.src = src; // Define o caminho da imagem grande
-            captionText.innerHTML = alt; // Define a legenda
+            modalImg.src = src;
+            captionText.innerHTML = alt;
+            document.body.style.overflow = "hidden"; // Bloqueia o scroll da página principal
         }
 
-        // Função para fechar o modal
         function closeModal() {
             modal.style.display = "none";
+            document.body.style.overflow = "auto"; // Restaura o scroll
         }
 
-        // Fecha o modal se o usuário clicar fora da imagem
         window.onclick = function (event) {
             if (event.target == modal) {
                 closeModal();
             }
         }
+
+        // ===================================
+        // LÓGICA DO MENU HAMBURGUER (MOBILE)
+        // ===================================
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            const navLinks = document.querySelectorAll('.nav-menu a');
+
+            // FUNÇÃO PARA ABRIR/FECHAR O MENU
+            menuToggle.addEventListener('click', () => {
+                const isOpen = navMenu.classList.toggle('open');
+                menuToggle.setAttribute('aria-expanded', isOpen);
+            });
+
+            // FUNÇÃO PARA FECHAR O MENU APÓS CLICAR EM UM LINK (mobile)
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    // Fecha o menu após o clique
+                    navMenu.classList.remove('open');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+        });
     </script>
 
 </body>
