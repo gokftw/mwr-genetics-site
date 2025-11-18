@@ -1,0 +1,416 @@
+/* ============================= */
+/* VARIÁVEIS E CONFIGURAÇÕES BASE */
+/* ============================= */
+:root {
+    --primary-color: #38761D;
+    /* Verde Cana Escuro (MWR) */
+    --secondary-color: #C36A2D;
+    /* Laranja/Terra (MWR) */
+    --text-dark: #333;
+    --text-light: #fff;
+    --bg-light: #f9f9f9;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* ============================= */
+/* 1. CABEÇALHO (HEADER) - AJUSTADO PARA O HAMBURGUER */
+/* ============================= */
+header {
+    background-color: var(--primary-color);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+header h1 {
+    color: var(--text-light);
+    margin: 0;
+    font-size: 1.8em;
+    letter-spacing: 1px;
+}
+
+/* O botão de toggle é escondido por padrão (desktop) */
+.menu-toggle {
+    display: none;
+}
+
+/* Estilo de navegação para DESKTOP */
+.nav-menu a {
+    color: var(--text-light);
+    margin-left: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #d4e8c8;
+}
+
+/* ============================= */
+/* 2. SEÇÃO PRINCIPAL (HERO) - IMAGEM DE FUNDO E OVERLAY */
+/* ============================= */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('WhatsApp Image 2025-11-17 at 10.12.06.jpeg') no-repeat center center/cover;
+    height: 70vh;
+    /* Altura padrão para desktop - boa visualização */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-light);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Overlay para tornar a imagem de fundo clicável para o modal */
+.hero-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* Garante que o texto e o CTA sejam clicáveis */
+.hero h2,
+.hero p,
+.hero .cta {
+    z-index: 2;
+    position: relative;
+}
+
+.hero h2 {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    font-weight: 700;
+    padding: 0 15px;
+}
+
+.hero p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    max-width: 700px;
+    padding: 0 15px;
+}
+
+.hero .cta {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    padding: 15px 40px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.hero .cta:hover {
+    background-color: #A0522D;
+    transform: translateY(-2px);
+}
+
+/* ============================= */
+/* 3. SEÇÕES DE CONTEÚDO GERAL */
+/* ============================= */
+section {
+    padding: 80px 5%;
+    text-align: center;
+}
+
+section h3 {
+    color: var(--primary-color);
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.bg-light {
+    background-color: var(--bg-light);
+}
+
+/* Estilo para imagens avulsas nas seções */
+.section-image-standalone {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 30px auto;
+    display: block;
+    cursor: pointer;
+}
+
+/* Vantagem Genética (Vídeo) */
+.vantagem-genetica video {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+/* Solo e Citação */
+blockquote {
+    border-left: 5px solid var(--secondary-color);
+    padding-left: 25px;
+    margin: 40px auto;
+    max-width: 650px;
+    font-style: italic;
+    font-size: 1.1em;
+    color: #555;
+    text-align: left;
+}
+
+/* ============================= */
+/* 6. GALERIA (GRID) */
+/* ============================= */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+.galeria-item {
+    background-color: var(--text-light);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.galeria-item img:hover {
+    transform: scale(1.02);
+}
+
+.galeria-item p {
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-top: 15px;
+    font-size: 1em;
+}
+
+/* ============================= */
+/* 7. RODAPÉ (FOOTER) */
+/* ============================= */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    padding: 40px 5%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+footer a {
+    color: #f0f0f0;
+    text-decoration: none;
+}
+
+/* ============================= */
+/* 8. MODAL (LIGHTBOX) STYLES - AJUSTADO PARA TELA CHEIA */
+/* ============================= */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: auto;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.close {
+    position: fixed;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    opacity: 0.7;
+    z-index: 1001;
+}
+
+.close:hover,
+.close:focus {
+    color: #fff;
+    text-decoration: none;
+    opacity: 1;
+}
+
+.modal-content,
+.caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0.1)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+/* ====================================================================== */
+/* 9. MEDIA QUERIES (Responsividade) - Estilos Específicos para Mobile */
+/* ====================================================================== */
+@media (max-width: 768px) {
+
+    /* CABEÇALHO */
+    header {
+        padding: 10px 20px;
+    }
+
+    /* TORNA O BOTÃO HAMBURGUER VISÍVEL */
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--text-light);
+        font-size: 1.8em;
+        cursor: pointer;
+        z-index: 1001;
+        line-height: 1;
+    }
+
+    /* ESTILO INICIAL DO MENU HAMBURGUER (ESCONDIDO) */
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: #2c6317;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        /* Alterado para max-height para transição suave */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+        z-index: 100;
+    }
+
+    /* ESTILO PARA O MENU ABERTO (Adicionado pelo JS) */
+    .nav-menu.open {
+        /* Um valor grande para max-height */
+        max-height: 500px;
+    }
+
+    .nav-menu a {
+        padding: 15px 20px;
+        margin: 0;
+        text-align: left;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Hero Section - Altura ajustada para mobile */
+    .hero {
+        height: 80vh;
+    }
+
+    .hero h2 {
+        font-size: 2.2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .hero .cta {
+        padding: 12px 30px;
+    }
+
+    /* Seções Gerais */
+    section {
+        padding: 50px 5%;
+    }
+
+    section h3 {
+        font-size: 2em;
+        margin-bottom: 25px;
+    }
+
+    /* Galeria */
+    .galeria-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0;
+    }
+}
