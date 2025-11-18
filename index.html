@@ -366,11 +366,21 @@
                 display: block;
                 background: none;
                 border: none;
+                /* Corrigido para garantir que o ícone se destaque */
                 color: var(--text-light);
                 font-size: 1.8em;
                 cursor: pointer;
-                z-index: 10;
+                z-index: 1001;
+                /* Z-index alto para ficar acima de tudo */
+                line-height: 1;
+                /* Alinhamento vertical do ícone */
             }
+
+            /* Efeito de rotação/transformação do ícone */
+            .menu-toggle.open span {
+                /* Se você quiser usar um ícone SVG ou algo mais complexo, pode ser feito aqui */
+            }
+
 
             /* ESTILO INICIAL DO MENU HAMBURGUER (ESCONDIDO) */
             .nav-menu {
@@ -382,15 +392,18 @@
                 flex-direction: column;
                 background-color: #2c6317;
                 border-top: 1px solid rgba(255, 255, 255, 0.2);
-                height: 0;
+                /* ALTERADO: Use max-height para transição suave com altura dinâmica */
+                max-height: 0;
                 overflow: hidden;
-                transition: height 0.4s ease-in-out;
+                transition: max-height 0.4s ease-in-out;
+                z-index: 100;
+                /* Garante que o menu flutue sobre o conteúdo principal */
             }
 
             /* ESTILO PARA O MENU ABERTO (Adicionado pelo JS) */
             .nav-menu.open {
-                height: 250px;
-                /* Altura fixa para transição suave */
+                /* ALTERADO: Um valor grande para max-height garante que ele sempre se expanda */
+                max-height: 500px;
             }
 
             .nav-menu a {
@@ -443,8 +456,7 @@
     <header>
         <h1>MWR Genetics</h1>
         <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">
-            ☰
-        </button>
+            <span class="icon-bar">&#9776;</span> </button>
         <nav class="nav-menu" id="main-nav">
             <a href="#inicio">Início</a>
             <a href="#genetica">Nossa Genética</a>
@@ -589,6 +601,7 @@
             const menuToggle = document.querySelector('.menu-toggle');
             const navMenu = document.querySelector('.nav-menu');
             const navLinks = document.querySelectorAll('.nav-menu a');
+            const iconBar = document.querySelector('.icon-bar'); // Seleciona o ícone
 
             // Garante que o modal esteja escondido ao carregar a página (correção para evitar aparição indesejada)
             document.getElementById("myModal").style.display = "none";
@@ -597,6 +610,15 @@
             menuToggle.addEventListener('click', () => {
                 const isOpen = navMenu.classList.toggle('open');
                 menuToggle.setAttribute('aria-expanded', isOpen);
+
+                // Alterna o ícone entre Hamburger (☰) e Fechar (×)
+                if (isOpen) {
+                    iconBar.innerHTML = '&#215;'; // ×
+                    menuToggle.classList.add('open');
+                } else {
+                    iconBar.innerHTML = '&#9776;'; // ☰
+                    menuToggle.classList.remove('open');
+                }
             });
 
             // FUNÇÃO PARA FECHAR O MENU APÓS CLICAR EM UM LINK (mobile)
@@ -605,6 +627,8 @@
                     // Fecha o menu após o clique
                     navMenu.classList.remove('open');
                     menuToggle.setAttribute('aria-expanded', 'false');
+                    iconBar.innerHTML = '&#9776;'; // Volta para o Hamburger
+                    menuToggle.classList.remove('open');
                 });
             });
         });
