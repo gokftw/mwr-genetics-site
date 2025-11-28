@@ -220,6 +220,40 @@ blockquote {
 }
 
 /* ============================= */
+/* 3.1. NOVO: ESTILO DA SEÇÃO EVENTOS */
+/* ============================= */
+.eventos-section {
+    padding-top: 40px;
+}
+
+.logo-evento {
+    /* Ajusta o tamanho máximo para o logo */
+    max-width: 450px;
+    margin: 10px auto 30px auto;
+    /* Remove a sombra para logos que já são quadrados ou têm fundo claro */
+    box-shadow: none;
+    border-radius: 0;
+    cursor: default;
+    /* Não é uma imagem para abrir modal */
+}
+
+/* Garante que os vídeos na seção eventos também usem o mesmo layout do grid */
+.video-item video {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Ajuste no mobile */
+@media (max-width: 768px) {
+    .logo-evento {
+        max-width: 90%;
+    }
+}
+
+/* ============================= */
 /* 7. RODAPÉ (FOOTER) */
 /* ============================= */
 footer {
@@ -242,6 +276,18 @@ footer p {
 footer a {
     color: #f0f0f0;
     text-decoration: none;
+}
+
+/* ------------------------------------------- */
+/* NOVO: Estilo para a linha de agradecimento */
+/* ------------------------------------------- */
+footer .agradecimento {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 0.85em;
+    font-style: italic;
+    color: #f0f0f0;
+    /* Cor mais clara para contraste sutil */
 }
 
 /* ============================= */
